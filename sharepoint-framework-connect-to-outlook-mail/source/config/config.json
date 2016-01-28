@@ -1,0 +1,13 @@
+{
+    "entries": [
+        {
+            "entry": "./lib/webparts/sharepoint-framework-connect-to-outlook-mail/SharePointFrameworkConnectToOutlookMailWebPart.js",
+            "manifest": "./src/webparts/sharepoint-framework-connect-to-outlook-mail/SharePointFrameworkConnectToOutlookMailWebPart.manifest.json",
+            "outputPath": "./dist/sharepoint-framework-connect-to-outlook-mail.bundle.js"
+        }
+    ],
+    "externals": {},
+    "localizedResources": {
+        "SharePointFrameworkConnectToOutlookMailStrings": "webparts/sharepoint-framework-connect-to-outlook-mail/loc/{locale}.js"
+    }
+}

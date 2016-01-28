@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+        <div class="panel panel-default">
+            <div class="panel-heading">v1 Endpoint</div>
+            <div class="panel-body">
+                <p><a href="@Url.Action("SigninV1", "AuthorizationCode")" class="btn btn-default btn-lg btn-block">Authorization Code Grant</a></p>
+                <p><a href="javascript:signInV1()" class="btn btn-default btn-lg btn-block">Implicit Code Grant</a></p>
+                <p><a href="@Url.Action("GetTokenV1", "ClientCredentials")" class="btn btn-default btn-lg btn-block">Client Credentials Grant</a></p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">v2 Endpoint</div>
+            <div class="panel-body">
+                <p><a href="@Url.Action("SigninV2", "AuthorizationCode")" class="btn btn-default btn-lg btn-block">Authorization Code Grant</a></p>
+                <p><a href="javascript:signInV2()" class="btn btn-default btn-lg btn-block">Implicit Code Grant</a></p>
+                <p><a href="@Url.Action("GetTokenV2", "ClientCredentials")" class="btn btn-default btn-lg btn-block">Client Credentials Grant</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        var tenantName = '@WebApplication1.Properties.Settings.Default.TenantName';
+        var clientId = '@WebApplication1.Properties.Settings.Default.ClientId';
+        var resourceUri = "https://graph.microsoft.com";
+        var scope = '@string.Join(" ", WebApplication1.Properties.Settings.Default.Scope.Split(' ').Select(item => WebApplication1.Properties.Settings.Default.ResourceUrl + "/" + item))';
+        var redirectUri = window.location.href.split("?")[0];
+        function signInV1() {
+            window.location.replace(
+                "https://login.microsoftonline.com/" + tenantName + "/oauth2/authorize" + "?" +
+                "response_type=token" + "&" +
+                "client_id=" + encodeURI(clientId) + "&" +
+                "resource=" + encodeURI(resourceUri) + "&" +
+                "redirect_uri=" + encodeURI(redirectUri)
+            );
+        }
+        function signInV2() {
+            window.location.replace(
+                "https://login.microsoftonline.com/" + tenantName + "/oauth2/v2.0/authorize" + "?" +
+                "response_type=token" + "&" +
+                "client_id=" + encodeURI(clientId) + "&" +
+                "scope=" + encodeURI(scope) + "&" +
+                "redirect_uri=" + encodeURI(redirectUri)
+            );
+        }
+    </script>
+}

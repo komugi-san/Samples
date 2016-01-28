@@ -1,0 +1,24 @@
+{
+    "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "SharepointFrameworkHideCommandBar",
+        "id": "0acd1490-0633-4a01-b266-e511023c2b5b",
+        "version": "1.0.0.0",
+        "features": [
+            {
+                "title": "SharePointFrameworkHideCommandBar",
+                "description": "SharePointFrameworkHideCommandBar",
+                "id": "174d5ad9-7427-432c-adfd-417ddf2aad22",
+                "version": "1.0.0.0",
+                "assets": {
+                    "elementManifests": [
+                        "elements.xml"
+                    ]
+                }
+            }
+        ]
+    },
+    "paths": {
+        "zippedPackage": "solution/SharepointFrameworkHideCommandBar.sppkg"
+    }
+}

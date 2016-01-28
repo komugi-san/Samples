@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction 
+        Title="SharePointFrameworkHideCommandBar"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="88430a9b-fcff-440b-9837-c65ad846c34a"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>

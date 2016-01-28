@@ -1,0 +1,18 @@
+{
+    "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+    "version": "2.0",
+    "bundles": {
+        "sharepoint-framework-hide-command-bar-application-customizer": {
+            "components": [
+                {
+                    "entrypoint": "./lib/extensions/sharepoint-framework-hide-command-bar/SharePointFrameworkHideCommandBarApplicationCustomizer.js",
+                    "manifest": "./src/extensions/sharepoint-framework-hide-command-bar/SharePointFrameworkHideCommandBarApplicationCustomizer.manifest.json"
+                }
+            ]
+        }
+    },
+    "externals": {},
+    "localizedResources": {
+        "SharePointFrameworkHideCommandBarApplicationCustomizerStrings": "lib/extensions/sharepoint-framework-hide-command-bar/loc/{locale}.js"
+    }
+}
